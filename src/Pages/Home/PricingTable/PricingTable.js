@@ -21,6 +21,8 @@ const PricingTable = () => {
                     <p  className='text-center text-lg font-poppins py-1'>Business Analysis</p>
                     <Link className='button font-source mt-6'>Start Now </Link>
                 </div>
+
+                {/* card 2 */}
                 <div className='flex flex-col justify-center items-center text-white activeCard rounded-md shadow-xl border py-3'> 
                     <h2 className='text-center text-4xl font-source font-bold  hover:text-white py-4'>Standard Plan</h2>
                     <h2 className='text-center text-2xl font-poppins pt-3'> <span className='font-poppins text-3xl font-bold '>$199 </span><span>/Month</span></h2>
@@ -34,6 +36,8 @@ const PricingTable = () => {
                     <p  className='text-center text-lg font-poppins py-1'>Business Analysis</p>
                     <Link className='button font-source mt-6'>Start Now </Link>
                 </div>
+
+                {/* card3 */}
                 <div className='flex flex-col justify-center items-center cardBg rounded-md shadow-xl border py-3'> 
                     <h2 className='text-center text-4xl font-source font-bold  hover:text-white py-4'>Premium Plan</h2>
                     <h2 className='text-center text-2xl font-poppins pt-3'> <span className='font-poppins text-3xl font-bold '>$299 </span><span>/Month</span></h2>

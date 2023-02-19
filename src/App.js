@@ -1,5 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css'
+import Blog from './Pages/Blog/Blog';
+import Contact from './Pages/Contact/Contact';
+import Footer from './Pages/Home/Footer/Footer';
 import Home from './Pages/Home/Home/Home';
 import NewsLetter from './Pages/Home/NewsLetter/NewsLetter';
 import PricingTable from './Pages/Home/PricingTable/PricingTable';
@@ -8,12 +11,11 @@ import GraphicDesign from './Pages/Home/Projects/graphicDesign/GraphicDesign';
 import WebDesign from './Pages/Home/Projects/WebDesign';
 import WebDevelopment from './Pages/Home/Projects/WebDevelopment/WebDevelopment';
 
+
 function App() {
   return (
     <div>
           <Home></Home>
-
-
 
           <Routes>
             <Route path='/all' element={<AllProjects></AllProjects>}> </Route>
@@ -28,6 +30,15 @@ function App() {
              <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
                   <NewsLetter></NewsLetter>
              </div>
+          </div>
+          <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
+              <Blog></Blog>
+          </div>
+          <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
+              <Contact></Contact>
+          </div>
+          <div className='footerBg'>
+              <Footer></Footer>
           </div>
     </div>
   );
