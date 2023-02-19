@@ -1,0 +1,37 @@
+.bannerImg1{
+    z-index: 99;
+}
+.bannerImg2{
+    z-index: 0;
+}
+
+.button{
+    background-color: #1F2471; 
+    border-radius: 29px; 
+
+    color: white; 
+    font-size: 18px; 
+    padding: 10px 35px; 
+    cursor: pointer; 
+    transition: .5s; 
+    }
+    
+    .button:hover{ 
+    background-color: white; 
+    color: #081F2D; 
+   
+    transition: 0.3s; 
+   }
+       
+.bgImg{
+    background-image: url(https://i.ibb.co/W5WHs1J/pic2.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.bgImg2{
+    background-image: url(https://i.ibb.co/FxHhgNn/pic3.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

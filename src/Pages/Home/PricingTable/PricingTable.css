@@ -1,0 +1,24 @@
+.cardBg:hover{
+    background-color: #866bff;
+    background-image: linear-gradient(90deg, #866bff 0%, #613dff 100%); 
+}
+
+.cardBg h2{
+    color:#1F2471 ; 
+}
+
+.cardBg p{
+    color:#1F2471 ; 
+}
+
+.cardBg:hover p {
+    color: white;
+}
+.cardBg:hover h2 {
+    color: white;
+}
+
+.activeCard{
+    background-color: #866bff;
+    background-image: linear-gradient(90deg, #866bff 0%, #613dff 100%); 
+}
