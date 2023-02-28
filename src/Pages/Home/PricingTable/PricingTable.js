@@ -4,7 +4,7 @@ import './PricingTable.css'
 
 const PricingTable = () => {
     return (
-        <div className='mt-8 md:mt-16'>
+        <div id='pricing1' className='mt-8 md:mt-16'>
             <h2 className='text-xl font-bold text-[#AD9AFF] text-center'>PRICING</h2>
             <h1 className='md:text-5xl font-bold text-3xl font-source text-[#1F2471] py-4 text-center'>CHOOSE ONE PLAN</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 md:mt-16'>

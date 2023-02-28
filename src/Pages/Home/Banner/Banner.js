@@ -17,16 +17,16 @@ import './Banner.css'
 
 const Banner = () => {
     return (
-        <div className='relative md:min-h-screen '>
+        <div className='relative '>
             
             <div className='flex-col flex lg:flex-row-reverse md:mt-8 mt-8 md:gap-10 justify-center items-center'>
 
                 <div className=''>
-                    <img className='bannerImg1 relative max-w-xs md:max-w-lg ' src={banner} alt="banner" />
+                    <img className='bannerImg1 relative  max-w-xs md:max-w-lg ' src={banner} alt="banner" />
                     <img className='bannerImg2 max-w-xs md:max-w-lg absolute top-4'  src={banner2} alt="banner" />
                 </div>
                 <div className='md:mt-20'>
-                    <h4 className='text-xl font-source py-4 pt-10 md:pt-0'>WE CREATE IDEAS</h4>
+                    <h4 className='text-xl font-source py-4 pt-10 md:pt-0 text-[#896EFF]'>WE CREATE IDEAS</h4>
                     <h2 className='md:text-5xl font-bold text-3xl font-source '>Build Stunning <span className='text-[#896EFF]'>Website</span> With creative Agency</h2>
                     <p className='py-6 md:pb-8 font-poppins text-sm'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse dignissimos blanditiis nihil doloremque quos adipisci officiis dicta dolorum vel nesciunt!</p>
 

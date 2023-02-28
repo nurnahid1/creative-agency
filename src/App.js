@@ -1,45 +1,53 @@
-import { Route, Routes } from 'react-router-dom';
+import { createBrowserRouter, RouterProvider,} from 'react-router-dom';
 import './App.css'
-import Blog from './Pages/Blog/Blog';
+import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
-import Footer from './Pages/Home/Footer/Footer';
 import Home from './Pages/Home/Home/Home';
-import NewsLetter from './Pages/Home/NewsLetter/NewsLetter';
-import PricingTable from './Pages/Home/PricingTable/PricingTable';
 import AllProjects from './Pages/Home/Projects/AllProjects/AllProjects';
 import GraphicDesign from './Pages/Home/Projects/graphicDesign/GraphicDesign';
-import WebDesign from './Pages/Home/Projects/WebDesign';
+import WebDesign from './Pages/Home/Projects/WebDesign/WebDesign';
 import WebDevelopment from './Pages/Home/Projects/WebDevelopment/WebDevelopment';
+import Main from './Pages/Layout/Main';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Login/Register';
+import Services from './Pages/Services/Services';
+import Service from './Pages/Services/Service';
+import Projects from './Pages/Home/Projects/Projects';
+import ProjectMain from './Pages/Layout/ProjectMain';
+
 
 
 function App() {
+  const router = createBrowserRouter([
+    {path:'/', element: <Main></Main>, children: [
+      {path:'/', element: <Home></Home>},
+      {path:'/home', element: <Home></Home>},
+      {path:'/aboutus', element: <About></About>},
+      {path:'/services', element: <Services></Services>},
+      {path:'/faq', element: <Service></Service>},
+      {path:'/contact', element: <Contact></Contact>},
+
+       // Projects
+      {path:'/', element: <ProjectMain></ProjectMain> , children:[
+      {path:'/all', element: <AllProjects></AllProjects>},
+      {path:'/graphicdesign', element: <GraphicDesign></GraphicDesign>},
+      {path:'/webdesign', element: <WebDesign></WebDesign>},
+      {path:'/webdevelopment', element: <WebDevelopment></WebDevelopment>},
+    ]},
+    ]},
+
+   
+  
+
+    // Login 
+    {path:'/login', element: <Login></Login>},
+    {path:'/register', element: <Register></Register>},
+    
+    
+  ])
   return (
     <div>
-          <Home></Home>
-
-          <Routes>
-            <Route path='/all' element={<AllProjects></AllProjects>}> </Route>
-            <Route path='/webdesign' element={<WebDesign></WebDesign>}> </Route>
-            <Route path='/graphicdesign' element={<GraphicDesign></GraphicDesign>}> </Route>
-            <Route path='/webdevelopment' element={<WebDevelopment></WebDevelopment>}> </Route>
-          </Routes>
-          <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
-              <PricingTable></PricingTable>
-          </div>
-          <div className='newsBg'>
-             <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
-                  <NewsLetter></NewsLetter>
-             </div>
-          </div>
-          <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
-              <Blog></Blog>
-          </div>
-          <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
-              <Contact></Contact>
-          </div>
-          <div className='footerBg'>
-              <Footer></Footer>
-          </div>
+      <RouterProvider router={router} />
     </div>
   );
 }

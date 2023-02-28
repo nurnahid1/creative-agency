@@ -15,4 +15,10 @@
    
     transition: 0.3s; 
    }
+
+.nav{
+    transition: .5s ease-in-out;
+    z-index:100;
+
+}
                 

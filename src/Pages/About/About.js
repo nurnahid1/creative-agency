@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './About.css'
-
 import about from '../../images/img4.png'
+
 
 const About = () => {
     return (
-        <div className='mb-8 md:mb-12'>
+        <div className='mb-8 md:mb-12 mt-16 md:mt-24'>
+          
             <div className='flex-col flex lg:flex-row  md:gap-20 justify-center items-center '>
-
                 <div>
                     <img className='md:max-w-md max-w-xs' src={about} alt="" />
                 </div>

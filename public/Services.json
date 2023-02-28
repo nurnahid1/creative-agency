@@ -1,0 +1,43 @@
+[
+    {
+        "name" : "Graphic Design",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel saepe temporibus quod tempora sit nulla nam necessitatibus consequatur velit reiciendis illo est, eius dignissimos?",
+        "image": "https://i.ibb.co/CJfNF2x/graphicD.png",
+        "Price": 99,
+        "category": {
+            "branding": "Company Branding Design",
+            "card": "Business Card Design",
+            "flyer" :"Flyer design",
+            "Poster": "Poster Design"
+        }
+
+    },
+    {
+        "name" : "Web Design",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel saepe temporibus quod tempora sit nulla nam necessitatibus consequatur velit reiciendis illo est, eius dignissimos?",
+        "image": "https://i.ibb.co/bJcYgXX/websiteD.png",
+        "Price": 199,
+        "category": {
+            "business": "Business Website Design",
+            "portfolio": "Portfolio Website Design",
+            "agency" :"Modern Agency Website design",
+            "news": "News Website Design",
+            "ecommerce": "E-commerce Website Design"
+        }
+
+    },
+    {
+        "name" : "Web Development",
+        "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel saepe temporibus quod tempora sit nulla nam necessitatibus consequatur velit reiciendis illo est, eius dignissimos?",
+        "image": "https://i.ibb.co/1f7rLP4/website-Dev.png",
+        "Price": 299,
+        "category": {
+            "business": "Business Website Development",
+            "portfolio": "Portfolio Website Development",
+            "agency" :"Modern Agency Website Development",
+            "news": "News Website Development",
+            "ecommerce": "E-commerce Website Development"
+        }
+
+    }
+]

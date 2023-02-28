@@ -3,11 +3,11 @@ import { Link } from 'react-router-dom';
 
 const Projects = () => {
     return (
-        <div className='mb-10 md:pt-28'>
+        <div className='mb-10 md:pt-16'>
             <div>
                 <h2 className='text-xl font-bold text-[#AD9AFF] text-center '>Projects</h2>
                 <div className='w-full'>
-                    <h1 className='md:text-5xl font-bold text-3xl font-source text-[#1F2471] py-4 text-center mx-auto w-2/3'>Check out Our Latest Portfolio</h1>
+                    <h1 className='md:text-5xl font-bold text-3xl font-source text-[#1F2471] py-4 text-center mx-auto mb-8'>Check out Our Latest Portfolio</h1>
                 </div>
 
                 {/* Projects Routes Desktop*/}
