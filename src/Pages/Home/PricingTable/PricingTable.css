@@ -1,4 +1,7 @@
 .cardBg:hover{
+    transition: all;
+    transition-duration: 6s;
+    transition-delay: 3s;
     background-color: #866bff;
     background-image: linear-gradient(90deg, #866bff 0%, #613dff 100%); 
 }

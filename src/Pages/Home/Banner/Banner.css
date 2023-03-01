@@ -5,7 +5,7 @@
     z-index: 0;
 }
 
-.button{
+/* .button{
     background-color: #8977FF; 
     border-radius: 29px; 
     color: white; 
@@ -20,7 +20,7 @@
     color: #081F2D; 
    
     transition: 0.3s; 
-   }
+   } */
        
 .bgImg{
     background-image: url(https://i.ibb.co/W5WHs1J/pic2.png);

@@ -14,6 +14,8 @@ import Services from './Pages/Services/Services';
 import Service from './Pages/Services/Service';
 import Projects from './Pages/Home/Projects/Projects';
 import ProjectMain from './Pages/Layout/ProjectMain';
+import NotFoundPage from './Pages/NotFound/NotFoundPage';
+import ServiceDetails from './Pages/Services/ServiceDetails';
 
 
 
@@ -23,7 +25,8 @@ function App() {
       {path:'/', element: <Home></Home>},
       {path:'/home', element: <Home></Home>},
       {path:'/aboutus', element: <About></About>},
-      {path:'/services', element: <Services></Services>},
+      {path:'/service', element: <Services></Services>},
+      {path:'/services/:serviceId', element: <ServiceDetails></ServiceDetails>},
       {path:'/faq', element: <Service></Service>},
       {path:'/contact', element: <Contact></Contact>},
 
@@ -42,6 +45,8 @@ function App() {
     // Login 
     {path:'/login', element: <Login></Login>},
     {path:'/register', element: <Register></Register>},
+    {path:'*', element: <NotFoundPage></NotFoundPage>},
+
     
     
   ])

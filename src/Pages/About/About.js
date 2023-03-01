@@ -18,7 +18,7 @@ const About = () => {
                     <p className='pb-4 py-2 font-poppins text-md'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam doloremque quo iure esse vel porro, at, quas provident aliquam distinctio ratione quam hic molestias? Culpa eum ipsam tempore velit odit ullam natus ut, nisi dicta inventore eius quis error itaque iste, aliquam maxime, quidem amet excepturi molestias ipsa nemo perspiciatis?</p>
                     <h1 className='text-[#1F2471] text-md underline font-bold font-poppins pb-5'>CEO Brainstrom</h1>
                     
-                    <Link className='button font-source'>Book Now </Link>
+                    <Link to={'/login'} className='px-8 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 '>Book Now</Link>
                 </div>
                 
                 

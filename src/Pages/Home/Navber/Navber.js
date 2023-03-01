@@ -18,14 +18,13 @@ const Navber = () => {
                 </div>
                 <div>
                     <ul className='flex justify-center items-center'>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] ' to={'/'}> Home</Link></li>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] ' to={'/aboutus'}> About Us</Link></li>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] ' to={'/services'}> Services</Link></li>
-                        <li><Link to={'/all'} className='mr-8 font-Poppins  text-[#1F2471] ' > Projects</Link></li>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] ' to={'/faq'}> FAQ</Link></li>
-                        <li><Link className='mr-8  font-Poppins  text-[#1F2471] ' to={'/contact'}> Contact</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-md  text-[#5E37DA] ' to={'/'}> Home</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-md text-[#5E37DA]  ' to={'/aboutus'}> About Us</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-md text-[#5E37DA]  ' to={'/service'}> Services</Link></li>
+                        <li><Link to={'/all'} className='mr-8 font-Poppins text-md text-[#5E37DA]  ' > Projects</Link></li>
+                        <li><Link className='mr-8  font-Poppins text-md text-[#5E37DA]  ' to={'/contact'}> Contact</Link></li>
 
-                        <Link to={'/login'} className='button'>Login</Link>
+                        <Link to={'/login'} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
                     </ul>
                 </div>
             </div>
@@ -45,10 +44,10 @@ const Navber = () => {
                         <li><Link className='mr-8 font-Poppins  text-[#1F2471] text-lg' to={'/aboutus'}> About Us</Link></li>
                         <li><Link className='mr-8 font-Poppins  text-[#1F2471] text-lg' to={'/service'}> Services</Link></li>
                         <li><a href='#pricing1' className='mr-8 font-Poppins  text-[#1F2471] text-lg' > Pricing</a></li>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] text-lg' to={'/faq'}> FAQ</Link></li>
                         <li><Link className='mr-8  font-Poppins  text-[#1F2471] text-lg' to={'/contact'}> Contact</Link></li>
 
-                        <Link to={'/login'} className='button mr-6'>Login</Link>
+                       
+                        <Link to={'/login'} className='px-5 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-lg hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
                     </ul>
                 </div>
             </div>

@@ -19,7 +19,8 @@ const PricingTable = () => {
                     <p  className='text-center text-lg font-poppins py-1'>HTML/CSS</p>
                     <p  className='text-center text-lg font-poppins py-1'>SEO Marketing</p>
                     <p  className='text-center text-lg font-poppins py-1'>Business Analysis</p>
-                    <Link className='button font-source mt-6'>Start Now </Link>
+                    
+                    <Link  className='px-8 py-3 rounded-full bg-[#5E37DA] text-white font-poppins text-md hover:bg-[white] hover:text-black transition-all duration-500 mt-6'>Start Now  </Link>
                 </div>
 
                 {/* card 2 */}
@@ -34,7 +35,7 @@ const PricingTable = () => {
                     <p  className='text-center text-lg font-poppins py-1'>SEO Marketing</p>
                     <p  className='text-center text-lg font-poppins py-1'>Video Marketing</p>
                     <p  className='text-center text-lg font-poppins py-1'>Business Analysis</p>
-                    <Link className='button font-source mt-6'>Start Now </Link>
+                    <Link  className='px-8 py-3 rounded-full bg-[#5E37DA] text-white font-poppins text-md hover:bg-[white] hover:text-black transition-all duration-500 mt-6'>Start Now  </Link>
                 </div>
 
                 {/* card3 */}
@@ -49,8 +50,7 @@ const PricingTable = () => {
                     <p  className='text-center text-lg font-poppins py-1'>SEO Marketing</p>
                     <p  className='text-center text-lg font-poppins py-1'>Video Marketing</p>
                     <p  className='text-center text-lg font-poppins py-1'>Brand Identity Design</p>
-                    <p  className='text-center text-lg font-poppins py-1'>Business Analysis</p>
-                    <Link className='button font-source mt-6'>Start Now </Link>
+                    <Link  className='px-8 py-3 rounded-full bg-[#5E37DA] text-white font-poppins text-md hover:bg-[white] hover:text-black transition-all duration-500 mt-6'>Start Now  </Link>
                 </div>
             </div>
         </div>

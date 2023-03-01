@@ -46,7 +46,7 @@ const Blog = () => {
                           spaceBetween: 10,
                         },
                         1024: {
-                          slidesPerView: 4,
+                          slidesPerView: 3,
                           spaceBetween: 10,
                         },
                       }}
@@ -60,7 +60,7 @@ const Blog = () => {
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog1} alt="" />
                             <h2 className='text-lg md:text-xl pb-2  font-source mt-2'>What is landing page? Why It's Important</h2>
-                            <p className='font-poppins text-md py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
+                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -90,7 +90,7 @@ const Blog = () => {
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog2} alt="" />
                             <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>Best websites for startrups</h2>
-                            <p className='font-poppins text-md py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel this is the best way to grow a new business.</p>
+                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel this is the best way to grow a new business.</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -120,7 +120,7 @@ const Blog = () => {
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog3} alt="" />
                             <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>Top 10 most popular web technologies</h2>
-                            <p className='font-poppins text-md py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
+                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -150,37 +150,7 @@ const Blog = () => {
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog4} alt="" />
                             <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>What is branding, Why branding is importan?</h2>
-                            <p className='font-poppins text-md py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
-
-                            <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
-
-                            <div className='flex justify-between px-3  items-center mt-4'>
-                               <div className='flex justify-start items-center'>
-                                    <div>
-                                        <AiOutlineClockCircle className='text-[#957DFF] h-5 w-5'></AiOutlineClockCircle>
-                                    </div>
-                                    <div> 
-                                        <p className='ml-1'>19-Feb-2023</p>
-                                    </div>
-                               </div>
-
-                                <div>
-                                    <div className='flex justify-center gap-2 items-center'>
-                                        <BsChat className='text-[#957DFF] h-5 w-5'></BsChat>
-                                        <p>12</p>
-                                        <AiOutlineShareAlt className='text-[#957DFF] h-5 w-5'></AiOutlineShareAlt>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </SwiperSlide>
-                    {/* Blog-5 */}
-                    <SwiperSlide className='rounded-md'>
-                        <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
-                            <img className='mb-2' src={blog5} alt="" />
-                            <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>Learn Video Marketing</h2>
-                            <p className='font-poppins text-md py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel all you need to know for building a success business!</p>
+                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -209,7 +179,7 @@ const Blog = () => {
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog6} alt="" />
                             <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>SEO is the key of all marketing methos!</h2>
-                            <p className='font-poppins text-md py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
+                            <p className='font-poppins text-sm py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
