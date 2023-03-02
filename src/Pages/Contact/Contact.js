@@ -5,15 +5,15 @@ import './Contact.css'
 
 const Contact = () => {
     return (
-        <div>
-            <h2 className='text-xl md:text-5xl text-center font-source py-8 md:py-10 md:mb-10 text-[#1F2471] w-4/6 mx-auto'>We Love To Help Companies to Grow Their Businesses</h2>
+        <div >
+            <h2 className='text-xl md:text-5xl text-center font-poppins font-bold py-8 md:py-10 md:mb-10 text-[#1F2471] w-4/6 mx-auto'>We Love To Help Companies to Grow Their Businesses</h2>
 
             <div>
                 <div className='flex flex-col md:flex-row-reverse justify-between items-center gap-28'>
-                    <div>
+                    <div data-aos="fade-left" data-aos-duration="2000">
                         <img className='max-w-xs md:max-w-sm lg:max-w-lg' src={contact} alt="" />
                     </div>
-                    <div className='w-full'>
+                    <div  data-aos="fade-right" data-aos-duration="2000" className='w-full'>
                         <form className='flex flex-col justify-center items-center ' action="">
                             <input className='border-none outline-none px-6 py-3 rounded-full bg-slate-100 my-2 w-full font-poppins' type="text" name="name" id="" placeholder='Your name' required/>
                             <input className='border-none outline-none px-6 py-3 rounded-full bg-slate-100 my-2 w-full font-poppins' type="email" name="email" id="" placeholder='Email address' required/>

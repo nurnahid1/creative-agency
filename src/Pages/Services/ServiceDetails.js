@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import graphic from '../../images/graphic.png'
 import shape from '../../images/shapeT.png'
 import './ServiceDetails.css'
 
 const ServiceDetails = () => {
     const {serviceId}= useParams()
     const [service, setService] = useState([]);
-    const {_id, name, description, image, Price, icon } = service
+    const {_id, name, description, image, Price} = service
     useEffect(()=>{
         const url = `http://localhost:5000/services/${serviceId}`
         console.log(url)
@@ -31,11 +30,12 @@ const ServiceDetails = () => {
             <p className='text-sm md:text-lg font-poppins '>{description}</p>
             <p className='text-sm font-poppins py-5 text-[#896EFF]'><span className='text-md font-poppins font-bold text-black'>Service ID:</span> {_id}</p>
             <h2 className='text-md font-poppins font-bold text-xl'>Price: <span className='text-xl font-poppins text-[#896EFF]'>${Price}</span></h2>
-            </div>
+            
+        </div>
             
            </div>
-           <div className='text-center mt-16 md:mt-24'>
-            <Link className='px-16 py-4 rounded-full bg-[#896EFF] text-white font-poppins text-lg hover:bg-[#5E37DA] transition-all duration-500'>Order Now</Link>
+           <div className='text-center mt-16'>
+            <Link to={`/checkout/${_id}`} className='px-10 py-3 rounded-full bg-[#896EFF] text-white font-poppins text-lg hover:bg-[#5E37DA] transition-all duration-500'>Proceed Checkout</Link>
            </div>
         </div>
     );

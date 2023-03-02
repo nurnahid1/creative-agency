@@ -5,7 +5,7 @@ import news from '../../../images/news.png'
 
 const NewsLetter = () => {
     return (
-        <div className='my-14 md:my-24 px-5'>
+        <div data-aos="zoom-in-up" data-aos-duration="1500" className='my-14 md:my-24 px-5'>
             <div className="flex flex-col md:flex-row justify-center items-center py-10 md:py-16 gap-20 ">
                 <div>
                     <img className='w-72 md:max-w-md' src={news } alt="" />

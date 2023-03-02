@@ -12,6 +12,7 @@ import { signOut } from 'firebase/auth';
 const Navber = () => {
     const [open, setOpen] = useState(false);
     const [user]= useAuthState(auth)
+    console.log(user)
 
     const handleSignout = ()=>{
         signOut(auth);
@@ -20,17 +21,26 @@ const Navber = () => {
     return (
         <div>
             {/* Desktop version */}
-            <div className='md:flex justify-between items-center hidden'>
+            <div className='md:flex justify-between items-center hidden  '>
+            
                 <div className='w-32'>
                     <img className='' src={logo} alt="" />
                 </div>
                 <div>
                     <ul className='flex justify-center items-center'>
-                        <li><Link className='mr-8 font-Poppins text-md  text-[#5E37DA] ' to={'/'}> Home</Link></li>
-                        <li><Link className='mr-8 font-Poppins text-md text-[#5E37DA]  ' to={'/aboutus'}> About Us</Link></li>
-                        <li><Link className='mr-8 font-Poppins text-md text-[#5E37DA]  ' to={'/service'}> Services</Link></li>
-                        <li><Link to={'/all'} className='mr-8 font-Poppins text-md text-[#5E37DA]  ' > Projects</Link></li>
-                        <li><Link className='mr-8  font-Poppins text-md text-[#5E37DA]  ' to={'/contact'}> Contact</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-lg  text-[#060213] font-semibold ' to={'/'}> Home</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-md text-[#060213] font-semibold  ' to={'/aboutus'}> About Us</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-md text-[#060213] font-semibold   ' to={'/service'}> Services</Link></li>
+                        <li><Link to={'/all'} className='mr-8 font-Poppins text-md text-[#060213] font-semibold  ' > Projects</Link></li>
+                        <li><Link className='mr-8  font-Poppins text-md text-[#060213] font-semibold  ' to={'/contact'}> Contact</Link></li>
+
+                        {
+                        user && 
+                        <li><Link className='mr-8  font-Poppins text-md text-[#060213] font-semibold  ' to={'/order'}> Orders</Link></li>
+                        }
+                        {
+                        user ? <img className='mr-3 w-10 rounded-full shadow-sm' src={user.photoURL} alt="" /> : ' '
+                        }
 
                         {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Sign Out</Link> 
                         :
@@ -51,14 +61,20 @@ const Navber = () => {
                     }
                    </div>
                 <ul className={`nav flex flex-col gap-5 justify-center items-center md:hidden md:pb-0 pb-6 absolute md:static md:z-auto z-50 right-0 w-2/3 py-5 md:py-0 md:w-auto rounded-md shadow-md  mt-8 md:mt-0 bg-white ${open ? 'top-30' : 'top-[-500px]'}`}>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] text-lg' to={'/'}> Home</Link></li>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] text-lg' to={'/aboutus'}> About Us</Link></li>
-                        <li><Link className='mr-8 font-Poppins  text-[#1F2471] text-lg' to={'/service'}> Services</Link></li>
-                        <li><a href='#pricing1' className='mr-8 font-Poppins  text-[#1F2471] text-lg' > Pricing</a></li>
-                        <li><Link className='mr-8  font-Poppins  text-[#1F2471] text-lg' to={'/contact'}> Contact</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-lg  text-[#060213] font-semibold ' to={'/'}> Home</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-lg  text-[#060213] font-semibold ' to={'/aboutus'}> About Us</Link></li>
+                        <li><Link className='mr-8 font-Poppins text-lg  text-[#060213] font-semibold ' to={'/service'}> Services</Link></li>
+                        <li><a href='#pricing1' className='mr-8 font-Poppins text-lg  text-[#060213] font-semibold ' > Pricing</a></li>
+                        <li><Link className='mr-8  font-Poppins text-lg  text-[#060213] font-semibold ' to={'/contact'}> Contact</Link></li>
 
-                       
-                        <Link to={'/login'} className='px-5 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-lg hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
+                       {
+                        user ? <p>{user.displayName}</p> : ' '
+                       }
+
+                        {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Sign Out</Link> 
+                        :
+                        <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
+                        }
                     </ul>
                 </div>
             </div>

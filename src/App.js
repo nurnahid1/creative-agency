@@ -18,6 +18,8 @@ import ServiceDetails from './Pages/Services/ServiceDetails';
 import PrivetRoute from './Pages/Login/PrivetRoute';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Orders from './Pages/Orders/Orders';
+import CheckOut from './Pages/CheckOut/CheckOut';
 AOS.init();
 
 
@@ -37,7 +39,18 @@ function App() {
 
       {path:'/faq', element: <Service></Service>},
       {path:'/contact', element: <Contact></Contact>},
-
+      {path:'/order', 
+      element: 
+      <PrivetRoute>
+        <Orders></Orders>
+      </PrivetRoute>
+      },
+      {path:'/checkout/:id', 
+      element: 
+      <PrivetRoute>
+        <CheckOut></CheckOut>
+      </PrivetRoute>
+      },
        // Projects
       {path:'/', element: <ProjectMain></ProjectMain> , children:[
       {path:'/all', element: <AllProjects></AllProjects>},

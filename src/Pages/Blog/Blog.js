@@ -22,8 +22,8 @@ const Blog = () => {
     return (
         <div className='my-10 md:my-24'>
             <div>
-            <h2 className='text-xl font-bold text-[#AD9AFF] text-center pb-3'>Blog</h2>
-            <h2 className='text-3xl md:text-5xl text-center font-source pb-8 md:pb-10 md:mb-10 text-[#1F2471]'>Latest Blog & News</h2>
+            <h2 className='text-xl font-thin font-poppins text-[#AD9AFF] text-center pb-3'>Blog</h2>
+            <h2 className='text-3xl md:text-5xl text-center font-poppins font-bold pb-8 md:pb-10 md:mb-10 text-[#1F2471]'>Latest Blog & News</h2>
                 <>
                 <Swiper
                     slidesPerView={3}
@@ -59,8 +59,8 @@ const Blog = () => {
                     <SwiperSlide className='rounded-md'>
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog1} alt="" />
-                            <h2 className='text-lg md:text-xl pb-2  font-source mt-2'>What is landing page? Why It's Important</h2>
-                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
+                            <h2 className='text-lg md:text-xl pb-2   font-poppins mt-2'>What is landing page? </h2>
+                            <p className='font-poppins text-start text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -89,8 +89,8 @@ const Blog = () => {
                     <SwiperSlide className='rounded-md'>
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog2} alt="" />
-                            <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>Best websites for startrups</h2>
-                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel this is the best way to grow a new business.</p>
+                            <h2 className='text-lg md:text-xl pb-2 font-poppins mt-2'>Best websites for startrups</h2>
+                            <p className='font-poppins text-start text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel this is the best way to grow a new business.</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -119,8 +119,8 @@ const Blog = () => {
                     <SwiperSlide className='rounded-md'>
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog3} alt="" />
-                            <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>Top 10 most popular web technologies</h2>
-                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
+                            <h2 className='text-lg md:text-xl pb-2 font-poppins mt-2'>Top 10 most popular website</h2>
+                            <p className='font-poppins text-sm text-start  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -149,8 +149,8 @@ const Blog = () => {
                     <SwiperSlide className='rounded-md'>
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog4} alt="" />
-                            <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>What is branding, Why branding is importan?</h2>
-                            <p className='font-poppins text-sm  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
+                            <h2 className='text-lg md:text-xl pb-2 font-poppins mt-2'>What is branding?</h2>
+                            <p className='font-poppins text-sm text-start  py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
@@ -178,8 +178,8 @@ const Blog = () => {
                     <SwiperSlide className='rounded-md'>
                         <div className='card border hover:border-indigo-700 rounded-md shadow-md  p-5'>
                             <img className='mb-2' src={blog6} alt="" />
-                            <h2 className='text-lg md:text-xl pb-2 font-source mt-2'>SEO is the key of all marketing methos!</h2>
-                            <p className='font-poppins text-sm py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
+                            <h2 className='text-lg md:text-xl pb-2 font-poppins mt-2'>SEO is the key of marketing !</h2>
+                            <p className='font-poppins text-sm text-start py-3'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium veritatis dolorem odio ea voluptatem vel!</p>
 
                             <div className='h-[1px] w-5/6 bg-slate-300 rounded-full mx-auto mt-2'></div>
 
