@@ -15,7 +15,6 @@ import blog1 from '../../images/blog.jpg'
 import blog2 from '../../images/blog2.jpg'
 import blog3 from '../../images/blog3.png'
 import blog4 from '../../images/blog4.jpg'
-import blog5 from '../../images/blog5.jpg'
 import blog6 from '../../images/blog6.png'
 
 
@@ -23,7 +22,8 @@ const Blog = () => {
     return (
         <div className='my-10 md:my-24'>
             <div>
-            <h2 className='text-3xl md:text-5xl text-center font-source py-8 md:py-10 md:mb-10 text-[#1F2471]'>Latest Blog & News</h2>
+            <h2 className='text-xl font-bold text-[#AD9AFF] text-center pb-3'>Blog</h2>
+            <h2 className='text-3xl md:text-5xl text-center font-source pb-8 md:pb-10 md:mb-10 text-[#1F2471]'>Latest Blog & News</h2>
                 <>
                 <Swiper
                     slidesPerView={3}

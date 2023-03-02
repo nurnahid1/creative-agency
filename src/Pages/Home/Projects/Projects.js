@@ -7,7 +7,7 @@ const Projects = () => {
             <div>
                 <h2 className='text-xl font-bold text-[#AD9AFF] text-center '>Projects</h2>
                 <div className='w-full'>
-                    <h1 className='md:text-5xl font-bold text-3xl font-source text-[#1F2471] py-4 text-center mx-auto mb-8'>Check out Our Latest Portfolio</h1>
+                    <h1 className='md:text-5xl font-bold text-3xl font-source text-[#1F2471] py-4 text-center mx-auto mb-8'>Check Our Latest Portfolio</h1>
                 </div>
 
                 {/* Projects Routes Desktop*/}

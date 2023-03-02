@@ -8,10 +8,10 @@ import Footer from '../Home/Footer/Footer';
 import { useForm } from 'react-hook-form';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from './Loading';
-import { sendPasswordResetEmail } from 'firebase/auth';
+
 
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -22,50 +22,40 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
       const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-      const [signInWithFacebook, fUser, fLoading, fError] = useSignInWithFacebook(auth);
       const navigate = useNavigate()
       const location = useLocation()
       const [email, setEmail]= useState('');
-      let from = location.state?.form?.pathname || "/"
+      
+
+      let from = location.state?.from?.pathname || '/';
       let signInError;
 
-      if(user || gUser || fUser){
-        console.log(user || gUser || fUser)
+      if(user || gUser ){
+        console.log(user || gUser )
       }
-      if( loading || gLoading || fLoading){
+      if( loading || gLoading ){
         return <Loading></Loading>
       }
-      if(error || gError || fError){
-        signInError = <p className='text-white py-1'>{error?.message || gError?.message || fError?.message} </p>
+      if(error || gError ){
+        signInError = <p className='text-white py-1'>{error?.message || gError?.message } </p>
       }
       
      const toastMessage = () => {
        toast('Give email & password to Login');      
      }
 
-    const forgetPassword = () =>{
-        sendPasswordResetEmail(auth, email)
-      .then(() => {
-      if(email){
-        toast('Password reset email sent!')
-      }
-     else{
-        toast('Please enter your email')
-      }
-      })
-    }
+
      
     const onSubmit = (data) => {
        signInWithEmailAndPassword(data.email, data.password)
        navigate(from, {replace:true});
-        console.log(data)
     };
 
     return (
         <div>
-           <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
+           <div  className='mx-8 md:mx-24 lg:mx-28 mt-8'>
             <Navber></Navber>
-            <div className='w-full text-center mt-16 mx-auto'>
+            <div data-aos="fade-up"  data-aos-duration="1500" className='w-full text-center mt-16 mx-auto'>
                 <form onSubmit={handleSubmit(onSubmit)} className='border md:w-3/6 lg:w-4/12 mx-auto text-center pb-10 px-5 rounded-md shadow-xl relative '  action="">
                     <div>
                         <img className='md:w-12 w-8 absolute top-[-1px]' src={shape} alt="" />
@@ -129,7 +119,7 @@ const Login = () => {
                 {/* Login Button */}
                 <input onClick={toastMessage} className='px-1 py-3 mt-2 mb-2 w-2/4 outline-none bg-[#896EFF] rounded-full hover:bg-[#8600D3] text-white font-poppins text-md'  type="submit" value="Login" />
 
-                    <p className='font-poppins text-sm mt-3'>Don't have account? <Link to={'/register'} className='undereline text-indigo-600'>Sign Up</Link></p>
+                    <p className='font-poppins text-sm pt-2'>Don't have account? <Link to={'/register'} className='undereline text-indigo-600'>Sign Up</Link></p>
                     {/* Divider */}
                     <div className="flex w-full items-center">
                         <div className="grid  flex-grow h-[1px] card bg-gray-300 rounded-box place-items-center"></div>

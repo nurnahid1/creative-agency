@@ -9,7 +9,7 @@ const PricingTable = () => {
             <h1 className='md:text-5xl font-bold text-3xl font-source text-[#1F2471] py-4 text-center'>CHOOSE ONE PLAN</h1>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 md:mt-16'>
                 {/* Card 1 */}
-                <div className='flex flex-col justify-center items-center cardBg rounded-md shadow-xl border py-3'> 
+                <div className='flex flex-col justify-center items-center cardBg rounded-md shadow-xl border py-3 hover:-translate-y-4 transition-all duration-500 '> 
                     <h2 className='text-center text-4xl font-source font-bold  hover:text-white py-4'>Basic Plan</h2>
                     <h2 className='text-center text-2xl font-poppins pt-3'> <span className='font-poppins text-3xl font-bold '>$99 </span><span>/Month</span></h2>
                     <p  className='text-center px-4 font-poppins text-md'>Basic plan for personal business </p>
@@ -24,7 +24,7 @@ const PricingTable = () => {
                 </div>
 
                 {/* card 2 */}
-                <div className='flex flex-col justify-center items-center text-white activeCard rounded-md shadow-xl border py-3'> 
+                <div className='flex flex-col justify-center items-center text-white activeCard rounded-md shadow-xl border py-3 -translate-y-8 hover:-translate-y-12 transition-all duration-500 '> 
                     <h2 className='text-center text-4xl font-source font-bold  hover:text-white py-4'>Standard Plan</h2>
                     <h2 className='text-center text-2xl font-poppins pt-3'> <span className='font-poppins text-3xl font-bold '>$199 </span><span>/Month</span></h2>
                     <p  className='text-center px-4 font-poppins text-md'>Standard plan for new business </p>
@@ -39,7 +39,7 @@ const PricingTable = () => {
                 </div>
 
                 {/* card3 */}
-                <div className='flex flex-col justify-center items-center cardBg rounded-md shadow-xl border py-3'> 
+                <div className='flex flex-col justify-center items-center cardBg rounded-md shadow-xl border py-3 hover:-translate-y-4 transition-all duration-500 '> 
                     <h2 className='text-center text-4xl font-source font-bold  hover:text-white py-4'>Premium Plan</h2>
                     <h2 className='text-center text-2xl font-poppins pt-3'> <span className='font-poppins text-3xl font-bold '>$299 </span><span>/Month</span></h2>
                     <p  className='text-center px-4 font-poppins text-md'>Premium plan for Mid-startups business </p>

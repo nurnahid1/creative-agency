@@ -49,7 +49,7 @@ const Register = () => {
         <div>
             <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
             <Navber></Navber>
-            <div className='w-full text-center mt-16 mx-auto'>
+            <div data-aos="fade-up"  data-aos-duration="1500" className='w-full text-center mt-16 mx-auto'>
                 <form onSubmit={handleSubmit(onSubmit)} className='border md:w-3/6 lg:w-4/12 mx-auto text-center pb-10 px-5 rounded-md shadow-xl relative '  action="">
                     <div>
                         <img className='md:w-16 w-8 absolute top-5' src={shape} alt="" />

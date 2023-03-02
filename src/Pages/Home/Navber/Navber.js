@@ -4,10 +4,18 @@ import logo from '../../../images/logos/logo.png'
 import { Link } from 'react-router-dom';
 import { HiMenu } from "react-icons/hi";
 import { MdClose } from "react-icons/md";
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 
 
 const Navber = () => {
     const [open, setOpen] = useState(false);
+    const [user]= useAuthState(auth)
+
+    const handleSignout = ()=>{
+        signOut(auth);
+      }
    
     return (
         <div>
@@ -24,7 +32,10 @@ const Navber = () => {
                         <li><Link to={'/all'} className='mr-8 font-Poppins text-md text-[#5E37DA]  ' > Projects</Link></li>
                         <li><Link className='mr-8  font-Poppins text-md text-[#5E37DA]  ' to={'/contact'}> Contact</Link></li>
 
-                        <Link to={'/login'} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
+                        {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Sign Out</Link> 
+                        :
+                        <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
+                        }
                     </ul>
                 </div>
             </div>

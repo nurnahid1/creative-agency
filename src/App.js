@@ -12,11 +12,13 @@ import Login from './Pages/Login/Login';
 import Register from './Pages/Login/Register';
 import Services from './Pages/Services/Services';
 import Service from './Pages/Services/Service';
-import Projects from './Pages/Home/Projects/Projects';
 import ProjectMain from './Pages/Layout/ProjectMain';
 import NotFoundPage from './Pages/NotFound/NotFoundPage';
 import ServiceDetails from './Pages/Services/ServiceDetails';
-
+import PrivetRoute from './Pages/Login/PrivetRoute';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 
 function App() {
@@ -26,7 +28,13 @@ function App() {
       {path:'/home', element: <Home></Home>},
       {path:'/aboutus', element: <About></About>},
       {path:'/service', element: <Services></Services>},
-      {path:'/services/:serviceId', element: <ServiceDetails></ServiceDetails>},
+      {path:'/services/:serviceId', 
+      element: 
+      <PrivetRoute>
+        <ServiceDetails></ServiceDetails>
+      </PrivetRoute>
+      },
+
       {path:'/faq', element: <Service></Service>},
       {path:'/contact', element: <Contact></Contact>},
 
