@@ -12,8 +12,7 @@ import { signOut } from 'firebase/auth';
 const Navber = () => {
     const [open, setOpen] = useState(false);
     const [user]= useAuthState(auth)
-    console.log(user)
-
+   
     const handleSignout = ()=>{
         signOut(auth);
       }
@@ -36,7 +35,7 @@ const Navber = () => {
 
                         {
                         user && 
-                        <li><Link className='mr-8  font-Poppins text-md text-[#060213] font-semibold  ' to={'/order'}> Orders</Link></li>
+                        <li><Link className='mr-8  font-Poppins text-md text-[#060213] font-semibold  ' to={'/orders'}> Orders</Link></li>
                         }
                         {
                         user ? <img className='mr-3 w-10 rounded-full shadow-sm' src={user.photoURL} alt="" /> : ' '
@@ -67,9 +66,13 @@ const Navber = () => {
                         <li><a href='#pricing1' className='mr-8 font-Poppins text-lg  text-[#060213] font-semibold ' > Pricing</a></li>
                         <li><Link className='mr-8  font-Poppins text-lg  text-[#060213] font-semibold ' to={'/contact'}> Contact</Link></li>
 
-                       {
-                        user ? <p>{user.displayName}</p> : ' '
-                       }
+                        {
+                        user && 
+                        <li><Link className='mr-8  font-Poppins text-md text-[#060213] font-semibold  ' to={'/orders'}> Orders</Link></li>
+                        }
+                        {
+                        user ? <img className='mr-3 w-10 rounded-full shadow-sm' src={user.photoURL} alt="" /> : ' '
+                        }
 
                         {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Sign Out</Link> 
                         :

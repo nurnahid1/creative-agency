@@ -1,46 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import OrderRow from './OrderRow';
 
 const Orders = () => {
+    const [user]= useAuthState(auth)
+    const [orders, setOrders] = useState([]);
+    
+    useEffect(()=>{
+        fetch(`http://localhost:5000/orders?email=${user.email}`)
+        .then(res => res.json())
+        .then(data => setOrders(data))
+    }, [user?.email])
+
     return (
-        <div>
-            <h2>Order page</h2>
-             {/* ------ Table ----- */}
-            <div className="overflow-x-auto w-full mt-10">
-            <table className="table w-full border border-black rounded-md">
+    <div className="overflow-x-auto w-full mt-10 rounded-md shadow-sm">
+            <table className="table w-full brounded-xl  ">
             {/* head */}
-                <thead>
-                <tr className='border border-black'>
-                    <th>Name</th>
-                    <th>Service</th>
-                    <th>Cancle Order</th>
-                    <th></th>
-                </tr>
+                <thead >
+                    <tr className='bg-[#896EFF]'>
+                        <th className=' text-[14px] text-white'>Name</th>
+                        <th className=' text-[14px] text-white'>Service</th>
+                        <th className=' text-[14px] text-white'>Phone</th>
+                        <th className=' text-[14px] text-white'>Price</th>
+                        <th className=' text-[14px] text-white'>Remove</th>
+                    </tr>
                 </thead>
-                <tbody>
-                {/* row 1 */}
-                <tr>
-                    <td>
-                    <div className="flex items-center space-x-3">
-                        <div className="avatar">
-                        <div className="mask mask-squircle w-12 h-12">
-                            <img src="/tailwind-css-component-profile-2@56w.png" alt="Avatar Tailwind CSS Component" />
-                        </div>
-                        </div>
-                        <div>
-                        <div className="font-bold">Hart Hagerty</div>
-                        </div>
-                    </div>
-                    </td>
-                    <td>
-                    Zemlak, Daniel and Leannon
-                    </td>
-                    <td>Purple</td>
-                </tr>
-                
-                
+                <tbody className=''>
+                {/* row  */}
+               {
+                    orders.map(order => <OrderRow
+                    key={order._id}
+                    order={order}
+                    ></OrderRow>)
+               }
                 </tbody>
             </table>
-        </div>
         </div>
     );
 };

@@ -39,7 +39,7 @@ function App() {
 
       {path:'/faq', element: <Service></Service>},
       {path:'/contact', element: <Contact></Contact>},
-      {path:'/order', 
+      {path:'/orders', 
       element: 
       <PrivetRoute>
         <Orders></Orders>
