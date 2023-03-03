@@ -5,12 +5,12 @@ import news from '../../../images/news.png'
 
 const NewsLetter = () => {
     return (
-        <div data-aos="zoom-in-up" data-aos-duration="1500" className='my-14 md:my-24 px-5'>
+        <div data-aos="fade-left" data-aos-duration="1500" className='my-14 md:my-24 px-5'>
             <div className="flex flex-col md:flex-row justify-center items-center py-10 md:py-16 gap-20 ">
-                <div>
+                <div data-aos="fade-right" data-aos-duration="1000">
                     <img className='w-72 md:max-w-md' src={news } alt="" />
                 </div>
-                <div>
+                <div data-aos="fade-left" data-aos-duration="1500">
                     <h2 className='text-3xl md:text-5xl font-source font-bold md:pb-6 pb-5 text-white  text-center md:text-start'>Subscribe To Our Newsletter For Latest Update</h2>
                     <p className='text-white font-poppins text-md pb-10 text-center md:text-start '>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum similique assumenda     reiciendis ullam nihil vitae repellat praesentium unde labore adipisci.</p>
 
