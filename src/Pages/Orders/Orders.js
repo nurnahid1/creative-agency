@@ -1,3 +1,4 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
@@ -9,8 +10,17 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
-        .then(res => res.json())
+        fetch(`http://localhost:5000/orders?email=${user?.email}`, {
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('token')}`
+            },
+        })
+        .then(res => {
+           if(res.status === 401 || res.status === 403){
+            return signOut(auth);
+           }
+           return res.json()
+        })
         .then(data => setOrders(data))
     }, [user?.email])
 

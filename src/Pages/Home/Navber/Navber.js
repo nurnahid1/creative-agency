@@ -11,6 +11,7 @@ import { signOut } from 'firebase/auth';
 
 const Navber = () => {
     const [open, setOpen] = useState(false);
+    const [dropdownOpen, setDropdownOpen] = useState(false)
     const [user]= useAuthState(auth)
    
     const handleSignout = ()=>{
@@ -38,12 +39,29 @@ const Navber = () => {
                         <li><Link className='mr-8  font-Poppins text-md text-[#060213] font-semibold  ' to={'/orders'}> Orders</Link></li>
                         }
                         {
-                        user ? <img className='mr-3 w-10 rounded-full shadow-sm' src={user.photoURL} alt="" /> : ' '
+                        user ? 
+                        // ---- Dropdow menu Dashbord ----
+                        <div className='relative'> 
+                            <div >
+                                <img onClick={()=> setDropdownOpen(!dropdownOpen)} className='mr-3 w-10 rounded-full shadow-sm' src={user.photoURL} alt="" />
+                                <div className={`absolute ${dropdownOpen ? 'top-30' : 'top-[-500px]'} hidden md:block`}>
+                                    <ul className='bg-[#896EFF] px-10 py-10 rounded-md z-999'>
+                                        <li><Link>My Profile</Link></li>
+                                        <li><Link>My Orders</Link></li>
+                                        <li><Link>Dashbord</Link></li>
+                                        
+                                    </ul>
+                                </div>
+
+                            </div> 
+                        </div>
+                        :
+                         ' '
                         }
 
-                        {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Sign Out</Link> 
+                        {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 '>Sign Out</Link> 
                         :
-                        <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
+                        <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 '>Login</Link>
                         }
                     </ul>
                 </div>
@@ -76,7 +94,7 @@ const Navber = () => {
 
                         {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Sign Out</Link> 
                         :
-                        <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Login</Link>
+                        <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 '>Login</Link>
                         }
                     </ul>
                 </div>

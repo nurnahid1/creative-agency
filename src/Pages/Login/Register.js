@@ -121,7 +121,7 @@ const Register = () => {
                 </label>
                 </div>
 
-
+                {signInError}
                 {/*  Sign Up Button  */}
                 <input className='px-1 py-3 w-2/4 outline-none bg-[#896EFF] rounded-full mt-5 hover:bg-[#8600D3] text-white font-poppins text-md'  type="submit" value="SignUp" />
 

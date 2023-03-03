@@ -47,8 +47,28 @@ const Login = () => {
 
      
     const onSubmit = (data) => {
-       signInWithEmailAndPassword(data.email, data.password)
-       navigate(from, {replace:true});
+       signInWithEmailAndPassword(data.email, data.password);
+
+       const currentUser = {
+          email : data.email
+       }
+       console.log(email)
+        //  Get JWT Token
+        fetch('http://localhost:5000/jwt', {
+          method: 'POST',
+          headers: {
+            'content-type': 'application/json'
+          },
+          body: JSON.stringify(currentUser)
+        })
+        .then(res => res.json())
+        .then(data=> {
+          console.log(data)
+          // Store JWT Token to client side Localstorage
+          localStorage.setItem('token', data.token);
+          navigate(from, {replace:true});
+        })
+
     };
 
     return (
