@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import tableImg from  '../../images/table.png'
 
 const OrderRow = ({order, handleDelete, handleStatusUpdate}) => {
-    console.log(order)
-    const {_id, serviceName, Price, customer, service, phone, status} = order
+    const {_id, serviceName, Price, paid, customer, service, status} = order
     const [orderService, setOrderService] = useState({})
 
     useEffect(()=>{
@@ -35,21 +34,26 @@ const OrderRow = ({order, handleDelete, handleStatusUpdate}) => {
                 <td className="font-poppins text-md  border-b-slate-300">
                     {serviceName}
                 </td>
-                <td className="font-poppins text-md  border-b-slate-300">{phone}</td>
+                
                 <td className="font-poppins text-md  border-b-slate-300"> ${Price}</td>
                 <td className='border-b-slate-300 text-center'>
                 <Link onClick={()=> handleStatusUpdate(_id)}  className='px-8 py-2 rounded-full   font-poppins  text-md border border-[#5E37DA] transition-all duration-500 text-[#5E37DA]'>{status ? status : 'Pending'}</Link>
                 </td>
+
+                {/* -- Payment -- */}
+                {/* <td className="font-poppins text-md  border-b-slate-300">
+                    {
+                        Price && !paid && <Link to={`/dashboard/pay/${_id}`} className='bg-[#957DFF] hover:bg-[#5E37DA] py-2 px-4 rounded-full text-white font-poppins text-sm transition-all duration-500 '>Pay</Link>
+                    }
+                    {
+                        Price && paid && <button className='bg-[#2dc653] py-2 px-4 rounded-full text-white font-poppins text-sm'>Paid</button>
+                    }
+                </td> */}
+
                 <td className='border-b-slate-300 text-center'>
                 <Link  onClick={()=>handleDelete(_id)} className='px-8 py-2 rounded-full bg-[#896EFF] text-white font-poppins  text-md hover:bg-[#5E37DA] transition-all duration-500 '>Remove</Link>
                 </td>
        
-                
-
-               
-               
-
-            
             </tr>
     );
 };

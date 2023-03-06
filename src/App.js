@@ -20,6 +20,10 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Orders from './Pages/Orders/Orders';
 import CheckOut from './Pages/CheckOut/CheckOut';
+import DashbordLayout from './Pages/Layout/DashbordLayout';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import Profile from './Pages/Dashboard/Profile';
+import Pay from './Pages/Dashboard/Pay';
 AOS.init();
 
 
@@ -39,12 +43,6 @@ function App() {
 
       {path:'/faq', element: <Service></Service>},
       {path:'/contact', element: <Contact></Contact>},
-      {path:'/orders', 
-      element: 
-      <PrivetRoute>
-        <Orders></Orders>
-      </PrivetRoute>
-      },
       {path:'/checkout/:id', 
       element: 
       <PrivetRoute>
@@ -58,18 +56,43 @@ function App() {
       {path:'/webdesign', element: <WebDesign></WebDesign>},
       {path:'/webdevelopment', element: <WebDevelopment></WebDevelopment>},
     ]},
+    // Dashboard Routes
+      {
+        path: '/dashboard',
+        element: 
+          <PrivetRoute>
+          <DashbordLayout></DashbordLayout>
+          </PrivetRoute>,
+          children: [
+            {
+              path: '/dashboard',
+              element: <Dashboard></Dashboard>
+            },
+            {path:'/dashboard/orders', 
+            element: 
+            <PrivetRoute>
+              <Orders></Orders>
+            </PrivetRoute>
+            },
+            {
+              path: '/dashboard/profile',
+              element: <Profile></Profile>
+            },
+           
+            
+            
+           
+          ]
+      }
     ]},
 
-   
-  
+    
 
-    // Login 
+
+    // Login Routes
     {path:'/login', element: <Login></Login>},
     {path:'/register', element: <Register></Register>},
     {path:'*', element: <NotFoundPage></NotFoundPage>},
-
-    
-    
   ])
   return (
     <div>

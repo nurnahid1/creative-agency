@@ -21,7 +21,7 @@ const Banner = () => {
             
             <div className='flex-col flex lg:flex-row-reverse md:mt-8 mt-8 md:gap-10 justify-center items-center'>
 
-                <div data-aos="fade-up" data-aos-duration="2000" className=''>
+                <div data-aos="fade-up" data-aos-duration="2000" className='mb-14 md:mb-0'>
                     <img className='bannerImg1 relative  max-w-xs md:max-w-lg ' src={banner} alt="banner" />
                     <img className='bannerImg2 max-w-xs md:max-w-lg absolute top-4'  src={banner2} alt="banner" />
                 </div>

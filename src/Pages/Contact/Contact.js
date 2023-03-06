@@ -6,11 +6,11 @@ import './Contact.css'
 const Contact = () => {
     return (
         <div >
-            <h2 className='text-xl md:text-5xl text-center font-poppins font-bold py-8 md:py-10 md:mb-10 text-[#1F2471] w-4/6 mx-auto'>We Love To Help Companies to Grow Their Businesses</h2>
+            <h2 className='text-2xl md:text-5xl text-center font-poppins font-bold py-8 md:py-10 mb-6 md:mb-10 text-[#1F2471] w-5/6 md:w-4/6 mx-auto'>We Love To Help Companies to Grow Their Businesses</h2>
 
             <div>
                 <div className='flex flex-col md:flex-row-reverse justify-between items-center gap-28'>
-                    <div data-aos="fade-left" data-aos-duration="2000">
+                    <div >
                         <img className='max-w-xs md:max-w-sm lg:max-w-lg' src={contact} alt="" />
                     </div>
                     <div  data-aos="fade-right" data-aos-duration="2000" className='w-full'>

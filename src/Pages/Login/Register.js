@@ -27,7 +27,7 @@ const Register = () => {
 
 
       if(error || googleError  || updateError ){
-        signInError = <p className='text-white py-1'>{error?.message || googleError?.message || updateError?.message}</p>
+        signInError = <p className='text-red-600 py-1'>{error?.message || googleError?.message || updateError?.message}</p>
       }
       if(user|| googleUser ){
         console.log(user || googleUser )
@@ -41,7 +41,7 @@ const Register = () => {
        await createUserWithEmailAndPassword(data.email, data.password)
        alert('Check your email to varify!')
         await updateProfile({ displayName:data.name });
-        navigate('/')
+        navigate('/login')
         console.log('profile updated') 
     };
 
@@ -49,7 +49,7 @@ const Register = () => {
         <div>
             <div className='mx-8 md:mx-24 lg:mx-28 mt-8'>
             <Navber></Navber>
-            <div data-aos="fade-up"  data-aos-duration="1500" className='w-full text-center mt-16 mx-auto'>
+            <div  className='w-full text-center mt-16 mx-auto'>
                 <form onSubmit={handleSubmit(onSubmit)} className='border md:w-3/6 lg:w-4/12 mx-auto text-center pb-10 px-5 rounded-md shadow-xl relative '  action="">
                     <div>
                         <img className='md:w-16 w-8 absolute top-5' src={shape} alt="" />
@@ -123,7 +123,7 @@ const Register = () => {
 
                 {signInError}
                 {/*  Sign Up Button  */}
-                <input className='px-1 py-3 w-2/4 outline-none bg-[#896EFF] rounded-full mt-5 hover:bg-[#8600D3] text-white font-poppins text-md'  type="submit" value="SignUp" />
+                <input className='px-1 py-3 w-2/4 outline-none bg-[#896EFF] rounded-full mt-5 hover:bg-[#5F38DB] transition-all duration-300 text-white font-poppins text-md'  type="submit" value="SignUp" />
 
 
 

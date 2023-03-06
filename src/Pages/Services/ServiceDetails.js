@@ -16,18 +16,16 @@ const ServiceDetails = () => {
     }, [])
     return (
         <div>
-            <img className='max-w-xs md:max-w-4xl my-5 mx-auto rounded-md hidden md:block' src={image} alt="" />
+            
            <div className='flex flex-col md:flex-row-reverse justify-center items-center gap-16 mt-16 relative'>
 
             <div>
                 <img className='max-w-xs md:max-w-md rounded-md shadow-lg' src={image} alt="" />
             </div>
             <div>
-            <h2 className='text-3xl md:text-4xl font-poppins py-3 my-3 underline z-[999]'>{name}</h2>
-                    <div>
-                        <img className=' w-6 absolute top-[6px] left-[2px] z-[1] rotate-180 hidden md:block' src={shape} alt="" />
-                    </div>
-            <p className='text-sm md:text-lg font-poppins '>{description}</p>
+            <h2 className='text-3xl md:text-4xl font-poppins py-2 my-3 text-white bg-black text-center mb-5 z-[999]'>{name}</h2>
+                   
+            <p className='text-sm md:text-md font-poppins '>{description}</p>
             <p className='text-sm font-poppins py-5 text-[#896EFF]'><span className='text-md font-poppins font-bold text-black'>Service ID:</span> {_id}</p>
             <h2 className='text-md font-poppins font-bold text-xl'>Price: <span className='text-xl font-poppins text-[#896EFF]'>${Price}</span></h2>
             

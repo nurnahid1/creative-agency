@@ -3,12 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Login/Loading';
 import OrderRow from './OrderRow';
 
 const Orders = () => {
-    const [user]= useAuthState(auth)
+    const [user, loading]= useAuthState(auth)
     const [orders, setOrders] = useState([]);
     
+    if(loading){
+        <Loading></Loading>
+    }
+
     useEffect(()=>{
         fetch(`http://localhost:5000/orders?email=${user?.email}`, {
             headers: {
@@ -23,6 +28,8 @@ const Orders = () => {
         })
         .then(data => setOrders(data))
     }, [user?.email])
+
+    
 
     // --- Delete ---
     const handleDelete = id =>{
@@ -69,16 +76,16 @@ const Orders = () => {
 
 
     return (
-    <div className="overflow-x-auto w-full mt-10 rounded-md shadow-sm">
+    <div className="overflow-x-auto w-12/12 mt-10 rounded-md shadow-sm ml-3">
             <table className="table w-full brounded-xl  ">
             {/* head */}
                 <thead >
                     <tr className='bg-[#896EFF]'>
                         <th className=' text-[14px] text-white'>Name</th>
                         <th className=' text-[14px] text-white'>Service</th>
-                        <th className=' text-[14px] text-white'>Phone</th>
                         <th className=' text-[14px] text-white'>Price</th>
-                        <th className=' text-[14px] text-white'>Order</th>
+                        <th className=' text-[14px] text-white text-center'>Order</th>
+                       
                         <th className=' text-[14px] text-white text-center'>Remove</th>
                     </tr>
                 </thead>

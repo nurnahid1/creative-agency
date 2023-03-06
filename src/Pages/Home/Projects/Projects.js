@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Projects = () => {
     return (
-        <div  className='mb-10 md:pt-16'>
+        <div  className='mb-10 mt-16'>
             <div>
                 <h2 className='text-xl font-thin font-poppins text-[#AD9AFF] text-center '>Projects</h2>
                 <div className='w-full'>

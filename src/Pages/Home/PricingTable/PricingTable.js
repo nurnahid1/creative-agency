@@ -4,10 +4,10 @@ import './PricingTable.css'
 
 const PricingTable = () => {
     return (
-        <div id='pricing1' className='mt-8 md:mt-16'>
+        <div id='pricing1' className='mt-24 '>
             <h2 className='text-xl font-thin font-poppins text-[#AD9AFF] text-center'>PRICING</h2>
             <h1 className='md:text-5xl font-bold text-3xl font-poppins text-[#1F2471] py-4 text-center'>CHOOSE ONE PLAN</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 md:mt-16'>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 mt-10 md:mt-16'>
                 {/* Card 1 */}
                 <div  className='flex flex-col justify-center items-center cardBg rounded-md shadow-xl border py-3 hover:-translate-y-4 transition-all duration-500 '> 
                     <h2 className='text-center text-4xl font-source font-bold  hover:text-white py-4'>Basic Plan</h2>

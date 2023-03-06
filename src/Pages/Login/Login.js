@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import './Login.css'
 import google from '../../images/google.png'
 import { Link, useLocation, useNavigate } from 'react-router-dom';
@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import Loading from './Loading';
+import { sendPasswordResetEmail } from 'firebase/auth';
 
 
 const Login = () => {
@@ -24,10 +25,11 @@ const Login = () => {
       const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
       const navigate = useNavigate()
       const location = useLocation()
-      const [email, setEmail]= useState('');
+      const [email, setEmail] = useState('');
+      const formRef = useRef(null);
       
 
-      let from = location.state?.from?.pathname || '/';
+      let from = location.state?.form?.pathname || "/"
       let signInError;
 
       if(user || gUser ){
@@ -36,23 +38,35 @@ const Login = () => {
       if( loading || gLoading ){
         return <Loading></Loading>
       }
-      if(error || gError ){
-        signInError = <p className='text-white py-1'>{error?.message || gError?.message } </p>
+      if(error || gError){
+        signInError = <p className='text-red-600 py-1'>{error?.message || gError?.message} </p>
       }
       
      const toastMessage = () => {
        toast('Give email & password to Login');      
      }
 
-
+     const forgetPassword = () =>{
+      sendPasswordResetEmail(auth, email)
+      .then(() => {
+      if(!email){
+        toast('Please enter your email')
+      
+      }
+      else{
+      toast('Password reset email sent!')
+      }
+      })
+    }
      
     const onSubmit = (data) => {
-       signInWithEmailAndPassword(data.email, data.password);
+       signInWithEmailAndPassword(data.email, data.password)
+       formRef.current.reset();
+       navigate(from, {replace:true});
 
        const currentUser = {
           email : data.email
        }
-       console.log(email)
         //  Get JWT Token
         fetch('http://localhost:5000/jwt', {
           method: 'POST',
@@ -66,7 +80,11 @@ const Login = () => {
           console.log(data)
           // Store JWT Token to client side Localstorage
           localStorage.setItem('token', data.token);
-          navigate(from, {replace:true});
+
+          toast('YAY! Successfully Logged In')
+          
+          
+          
         })
 
     };
@@ -75,8 +93,8 @@ const Login = () => {
         <div>
            <div  className='mx-8 md:mx-24 lg:mx-28 mt-8'>
             <Navber></Navber>
-            <div data-aos="fade-up"  data-aos-duration="1500" className='w-full text-center mt-16 mx-auto'>
-                <form onSubmit={handleSubmit(onSubmit)} className='border md:w-3/6 lg:w-4/12 mx-auto text-center pb-10 px-5 rounded-md shadow-xl relative '  action="">
+            <div className='w-full text-center mt-16 mx-auto'>
+                <form ref={formRef} onSubmit={handleSubmit(onSubmit)} className='border md:w-3/6 lg:w-4/12 mx-auto text-center pb-10 px-5 rounded-md shadow-xl relative '  action="">
                     <div>
                         <img className='md:w-12 w-8 absolute top-[-1px]' src={shape} alt="" />
                     </div>
@@ -137,7 +155,9 @@ const Login = () => {
                 {signInError}
 
                 {/* Login Button */}
-                <input onClick={toastMessage} className='px-1 py-3 mt-2 mb-2 w-2/4 outline-none bg-[#896EFF] rounded-full hover:bg-[#8600D3] text-white font-poppins text-md'  type="submit" value="Login" />
+                <input onClick={toastMessage} className='px-1 py-3 mt-2 mb-2 w-2/4 outline-none bg-[#896EFF] rounded-full hover:bg-[#623DDE] text-white font-poppins text-md'  type="submit" value="Login" />
+
+                <p onClick={forgetPassword} className='font-poppins text-sm py-1 text-indigo-600 hover:underline cursor-pointer'>Forget Password?</p>
 
                     <p className='font-poppins text-sm pt-2'>Don't have account? <Link to={'/register'} className='undereline text-indigo-600'>Sign Up</Link></p>
                     {/* Divider */}

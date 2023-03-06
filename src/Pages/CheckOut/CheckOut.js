@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import checkout from '../..//images/checkout.jpg'
 import auth from '../../firebase.init';
@@ -11,7 +11,7 @@ const CheckOut = () => {
     const {_id, name, Price} = singleService
     useEffect(()=>{
         const url = `http://localhost:5000/checkout/${id}`
-        console.log(url)
+       
         fetch(url)
         .then(res => res.json())
         .then(data => setSingleService(data))
