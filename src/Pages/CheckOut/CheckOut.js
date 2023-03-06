@@ -10,7 +10,7 @@ const CheckOut = () => {
     const [singleService, setSingleService] = useState([]);
     const {_id, name, Price} = singleService
     useEffect(()=>{
-        const url = `http://localhost:5000/checkout/${id}`
+        const url = `https://creative-agency-backend.vercel.app/checkout/${id}`
        
         fetch(url)
         .then(res => res.json())
@@ -40,7 +40,7 @@ const CheckOut = () => {
         }
 
 
-        fetch('http://localhost:5000/orders', {
+        fetch('https://creative-agency-backend.vercel.app/orders', {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

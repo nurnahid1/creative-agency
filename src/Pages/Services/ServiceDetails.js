@@ -8,7 +8,7 @@ const ServiceDetails = () => {
     const [service, setService] = useState([]);
     const {_id, name, description, image, Price} = service
     useEffect(()=>{
-        const url = `http://localhost:5000/services/${serviceId}`
+        const url = `https://creative-agency-backend.vercel.app/services/${serviceId}`
         console.log(url)
         fetch(url)
         .then(res => res.json())

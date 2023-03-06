@@ -68,7 +68,7 @@ const Login = () => {
           email : data.email
        }
         //  Get JWT Token
-        fetch('http://localhost:5000/jwt', {
+        fetch('https://creative-agency-backend.vercel.app/jwt', {
           method: 'POST',
           headers: {
             'content-type': 'application/json'
