@@ -75,7 +75,7 @@ const CheckOut = () => {
                 {/* ------- Checkout Form -------- */}
 
                 <div className='w-full '>
-                    <div  data-aos="fade-up" data-aos-duration="2000" className='w-8/12 mx-auto'>
+                    <div  data-aos="fade-up" data-aos-duration="2000" className='w-11/12 md:w-8/12 mx-auto'>
                         <form onSubmit={handlePlaceOrder} className='flex flex-col justify-center items-center ' action="">
 
                             <input className='border-none outline-none px-6 py-3 rounded-full bg-slate-100 my-2 w-full font-poppins' type="text" name="name" id="" placeholder='Your name' defaultValue={user?.displayName} readOnly required/>

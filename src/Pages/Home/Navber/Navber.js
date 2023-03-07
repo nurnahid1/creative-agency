@@ -87,7 +87,9 @@ const Navber = () => {
 
                         {user ? <Link onClick={handleSignout} className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 mr-6'>Sign Out</Link> 
                         :
-                        <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 '>Login</Link>
+                        <div className='text-center'>
+                            <Link to={'/login'}  className='px-7 py-2 rounded-full bg-[#896EFF] text-white font-poppins text-md hover:bg-[#5E37DA] transition-all duration-500 '>Login</Link>
+                        </div>
                         }
                     </ul>
                 </div>
